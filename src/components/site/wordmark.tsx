@@ -18,8 +18,8 @@ export function Wordmark({
       <Image
         src="/topx-logo.png"
         alt=""
-        width={188}
-        height={155}
+        width={626}
+        height={517}
         priority
         className="h-8 w-auto transition-transform duration-500 ease-out group-hover:-rotate-12"
       />

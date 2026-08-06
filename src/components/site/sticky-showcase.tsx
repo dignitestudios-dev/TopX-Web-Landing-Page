@@ -79,7 +79,11 @@ export function StickyShowcase() {
   }
 
   return (
-    <section ref={ref} className="relative border-b border-ink/10" aria-label="The app">
+    <section
+      ref={ref}
+      className="relative border-b border-ink/10"
+      aria-label="The app"
+    >
       {/* One viewport of scroll per step, plus a little breathing room. */}
       <div style={{ height: `${steps.length * 100 + 20}svh` }}>
         {/* Pinned *below* the sticky header (4.5rem) rather than at top-0, so
