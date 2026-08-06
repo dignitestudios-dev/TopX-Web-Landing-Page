@@ -1,26 +1,214 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  TopX design tokens.
+
+  Single-hue system. Everything is the client's brand orange (#F85E00) against
+  warm near-black and warm bone white — orange is used as a *field* colour,
+  full-bleed planes of it, not as a lone accent dot. Depth comes from the amber
+  and ember steps rather than from a second hue, so there is no green anywhere
+  in the palette.
+*/
+
+@theme {
+  --color-blaze: #f85e00;
+  --color-blaze-deep: #b93b00;
+  --color-blaze-amber: #ff9142;
+  --color-blaze-tint: #ffe4d1;
+  --color-ink: #17100c;
+  --color-ink-soft: #2a1e17;
+  --color-bone: #f4efe8;
+  --color-bone-dim: #e4dcd1;
+  --color-ash: #6b615a;
+
+  --font-display: var(--font-bricolage), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+
+  /* Display type is set tight and large; body stays generous and readable. */
+  /* Minimums are set from the narrowest realistic phone (320px) so the display
+     sizes never overflow their container before the vw term takes over. */
+  --text-mega: clamp(2.2rem, 10.5vw, 8.5rem);
+  --text-mega--line-height: 0.9;
+  --text-mega--letter-spacing: -0.04em;
+  --text-jumbo: clamp(1.9rem, 6.5vw, 5rem);
+  --text-jumbo--line-height: 0.98;
+  --text-jumbo--letter-spacing: -0.03em;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1;
+  --text-eyebrow--letter-spacing: 0.18em;
 }
 
+@custom-variant dark (&:is(.dark *));
+
+/* shadcn primitives read these; map them onto the TopX palette so any
+   component pulled from the registry inherits the brand automatically. */
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) * 0.5);
+  --radius-md: calc(var(--radius) * 0.75);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.5);
+  --radius-2xl: calc(var(--radius) * 2);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+:root {
+  --background: #f4efe8;
+  --foreground: #17100c;
+  --card: #ffffff;
+  --card-foreground: #17100c;
+  --popover: #ffffff;
+  --popover-foreground: #17100c;
+  --primary: #f85e00;
+  --primary-foreground: #ffffff;
+  --secondary: #e4dcd1;
+  --secondary-foreground: #17100c;
+  --muted: #e4dcd1;
+  --muted-foreground: #6b615a;
+  --accent: #ffe4d1;
+  --accent-foreground: #b93b00;
+  --destructive: #b3261e;
+  --border: #d9cfc2;
+  --input: #d9cfc2;
+  --ring: #f85e00;
+  --radius: 0.25rem;
+}
+
+.dark {
+  --background: #17100c;
+  --foreground: #f4efe8;
+  --card: #2a1e17;
+  --card-foreground: #f4efe8;
+  --popover: #2a1e17;
+  --popover-foreground: #f4efe8;
+  --primary: #f85e00;
+  --primary-foreground: #17100c;
+  --secondary: #2a1e17;
+  --secondary-foreground: #f4efe8;
+  --muted: #2a1e17;
+  --muted-foreground: #a2958a;
+  --accent: #3a2519;
+  --accent-foreground: #f85e00;
+  --destructive: #e5484d;
+  --border: rgb(244 239 232 / 14%);
+  --input: rgb(244 239 232 / 18%);
+  --ring: #f85e00;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply font-sans;
+    -webkit-font-smoothing: antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* One visible focus treatment for the whole site, on every surface. */
+  :focus-visible {
+    outline: 2px solid var(--color-blaze);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  ::selection {
+    background: var(--color-blaze);
+    color: #fff;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* Shared page rhythm. Defined once so section padding can't drift or get
+     cancelled out by competing selectors across pages. */
+  .shell {
+    @apply mx-auto w-full max-w-[88rem] px-5 sm:px-8 lg:px-14;
+  }
+
+  .band {
+    @apply py-20 sm:py-28 lg:py-36;
+  }
+
+  .band-tight {
+    @apply py-14 sm:py-20 lg:py-24;
+  }
+
+  .eyebrow {
+    @apply font-mono text-eyebrow uppercase;
+  }
+}
+
+@layer utilities {
+  /* Continuous topic ticker. CSS rather than JS so it costs nothing on the
+     main thread, and pauses outright under reduced motion. */
+  @keyframes marquee-x {
+    from {
+      transform: translate3d(0, 0, 0);
+    }
+    to {
+      transform: translate3d(-50%, 0, 0);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee-x 42s linear infinite;
+    will-change: transform;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-marquee {
+      animation: none;
+    }
+  }
+
+  /* Soft grain over the orange fields so large flat planes don't band. */
+  .grain::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.32'/%3E%3C/svg%3E");
+  }
 }
