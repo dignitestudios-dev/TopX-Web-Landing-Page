@@ -4,9 +4,9 @@ import { ScrollScale } from "@/components/motion/scroll-scale";
 import { SplitWords } from "@/components/motion/split-words";
 import { LaptopFrame } from "@/components/site/device-frames";
 import { PinnedCapabilities } from "@/components/site/pinned-capabilities";
+import { ScrollLogo } from "@/components/site/scroll-logo";
 import { StickyShowcase } from "@/components/site/sticky-showcase";
 import { TopicMarquee } from "@/components/site/topic-marquee";
-import { LazyTopicSort } from "@/components/three/lazy-scenes";
 
 const commentModes = [
   { name: "All comments", detail: "Everything, unfiltered." },
@@ -18,7 +18,10 @@ const commentModes = [
 export default function HomePage() {
   return (
     <>
-      {/* Hero — the sorting scene is the thesis: same content, arriving sorted. */}
+      {/* The mark that travels and spins the length of the page. */}
+      <ScrollLogo />
+
+      {/* Hero. */}
       <section className="relative overflow-hidden">
         <div className="shell relative grid items-center gap-14 pt-14 pb-16 lg:grid-cols-[1.05fr_1fr] lg:pt-20 lg:pb-28">
           <div className="relative z-10">
@@ -45,10 +48,10 @@ export default function HomePage() {
             </Reveal>
           </div>
 
-          {/* Height is fixed so the canvas never causes layout shift. */}
-          <div className="relative h-[22rem] sm:h-[26rem] lg:h-[34rem]">
-            <LazyTopicSort className="absolute inset-0" />
-          </div>
+          {/* Empty on purpose: reserves the space the travelling mark occupies
+              at scroll position zero. Fixed elements don't take up layout, so
+              without this the hero copy would sit under it on mobile. */}
+          <div className="h-[16rem] sm:h-[20rem] lg:h-[32rem]" aria-hidden />
         </div>
       </section>
 

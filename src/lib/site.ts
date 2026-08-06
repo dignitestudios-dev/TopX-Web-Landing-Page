@@ -18,6 +18,16 @@ export type NavItem = {
   href: string;
   label: string;
   blurb: string;
+  /** Opens in a new tab and is rendered as a plain anchor, not a Next link. */
+  external?: boolean;
+};
+
+/** The referral site. The only outbound destination on the whole site. */
+export const connectLink: NavItem = {
+  href: "https://referral.my-topx.com/",
+  label: "Connect",
+  blurb: "Join the TopX referral programme",
+  external: true,
 };
 
 export const primaryNav: NavItem[] = [

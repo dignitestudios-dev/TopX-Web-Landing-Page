@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { Wordmark } from "@/components/site/wordmark";
-import { footerNav, site } from "@/lib/site";
+import { connectLink, footerNav, site } from "@/lib/site";
 
 export function SiteFooter() {
   return (
@@ -14,6 +14,17 @@ export function SiteFooter() {
               {site.tagline} A feed built around subject matter, so what you see
               is what you actually came for.
             </p>
+
+            <a
+              href={connectLink.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 inline-flex items-center gap-2 border-b border-blaze pb-1 text-bone transition-colors hover:text-blaze"
+            >
+              {connectLink.label}
+              <span aria-hidden>↗</span>
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
           </div>
 
           <div className="grid gap-10 sm:grid-cols-3">

@@ -7,8 +7,26 @@ import { useEffect, useState } from "react";
 
 import { ScrollProgress } from "@/components/motion/scroll-progress";
 import { Wordmark } from "@/components/site/wordmark";
-import { primaryNav } from "@/lib/site";
+import { connectLink, primaryNav } from "@/lib/site";
 import { cn } from "@/lib/utils";
+
+/** Small outbound-link glyph, so "Connect" reads as leaving the site. */
+function ExternalGlyph() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="h-3.5 w-3.5"
+    >
+      <path d="M7 17 17 7M9 7h8v8" />
+    </svg>
+  );
+}
 
 export function SiteHeader() {
   const pathname = usePathname();
@@ -72,6 +90,19 @@ export function SiteHeader() {
                 </li>
               );
             })}
+
+            <li className="ml-3">
+              <a
+                href={connectLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 bg-ink px-5 py-2.5 text-sm text-bone transition-colors hover:bg-blaze"
+              >
+                {connectLink.label}
+                <ExternalGlyph />
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            </li>
           </ul>
         </nav>
 
@@ -133,6 +164,20 @@ export function SiteHeader() {
                 </li>
               ))}
             </ul>
+
+            <div className="shell pt-6 pb-10">
+              <a
+                href={connectLink.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-2 bg-blaze px-6 py-4 text-white"
+              >
+                {connectLink.label}
+                <ExternalGlyph />
+                <span className="sr-only">(opens in a new tab)</span>
+              </a>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>
