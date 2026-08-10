@@ -58,10 +58,26 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
     items: [primaryNav[2]],
   },
   {
+    // The canonical legal documents live on the referral site, not here.
     heading: "Legal",
     items: [
-      { href: "/privacy", label: "Privacy policy", blurb: "How we handle your data" },
-      { href: "/terms", label: "Terms of service", blurb: "The rules of the platform" },
+      {
+        href: "https://referral.my-topx.com/PrivacyPolicy",
+        label: "Privacy policy",
+        blurb: "How we handle your data",
+        external: true,
+      },
+      {
+        href: "https://referral.my-topx.com/Terms",
+        label: "Terms of service",
+        blurb: "The rules of the platform",
+        external: true,
+      },
+      {
+        href: "/child-safety-policy",
+        label: "Child safety policy",
+        blurb: "How we protect minors on the platform",
+      },
     ],
   },
 ];

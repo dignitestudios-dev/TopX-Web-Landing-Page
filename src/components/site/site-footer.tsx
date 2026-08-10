@@ -34,12 +34,29 @@ export function SiteFooter() {
                 <ul className="mt-5 space-y-3">
                   {group.items.map((item) => (
                     <li key={item.href}>
-                      <Link
-                        href={item.href}
-                        className="text-bone/70 transition-colors hover:text-bone"
-                      >
-                        {item.label}
-                      </Link>
+                      {item.external ? (
+                        // Legal documents are hosted on the referral site, so
+                        // these are plain anchors rather than Next links.
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-bone/70 transition-colors hover:text-bone"
+                        >
+                          {item.label}
+                          <span aria-hidden className="text-xs">
+                            ↗
+                          </span>
+                          <span className="sr-only">(opens in a new tab)</span>
+                        </a>
+                      ) : (
+                        <Link
+                          href={item.href}
+                          className="text-bone/70 transition-colors hover:text-bone"
+                        >
+                          {item.label}
+                        </Link>
+                      )}
                     </li>
                   ))}
                 </ul>
