@@ -52,6 +52,11 @@ export const metadata: Metadata = {
     title: `${site.name} — ${site.tagline}`,
     description: site.description,
   },
+  icons: {
+    icon: "/topx-logo.png",
+    shortcut: "/topx-logo.png",
+    apple: "/topx-logo.png",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
