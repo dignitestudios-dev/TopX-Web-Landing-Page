@@ -86,7 +86,7 @@ export default function ChildSafetyPolicyPage() {
   return (
     <LegalDocument
       draft={false}
-      title="Child safety and protection policy"
+      title="Child Safety Policy — MyTopX"
       updated="17 February 2026"
       intro="MyTopX enforces strict policies to prevent child sexual abuse and exploitation, and works with law enforcement and child protection agencies where violations occur."
       sections={sections}

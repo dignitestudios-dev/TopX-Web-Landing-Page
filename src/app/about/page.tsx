@@ -9,13 +9,13 @@ import { PageHero } from "@/components/site/page-hero";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Why TopX rebuilt the social feed around subject matter instead of personalities, and the principles the platform is designed to hold to.",
+    "Why MyTopX rebuilt the social feed around subject matter instead of personalities, and the principles the platform is designed to hold to.",
 };
 
 const principles = [
   {
     name: "The subject is the unit",
-    body: "Every structure on TopX hangs off a topic page. Feeds, permissions, moderation and discovery all resolve to a subject rather than an account.",
+    body: "Every structure on MyTopX hangs off a topic page. Feeds, permissions, moderation and discovery all resolve to a subject rather than an account.",
   },
   {
     name: "You do the sorting",
@@ -42,7 +42,7 @@ export default function AboutPage() {
             <span className="text-blaze">subject matter</span>.
           </>
         }
-        lede="Social platforms ask you to follow people and then spend enormous effort guessing which parts of what those people post you actually wanted. TopX skips the guessing."
+        lede="Social platforms ask you to follow people and then spend enormous effort guessing which parts of what those people post you actually wanted. MyTopX skips the guessing."
       />
 
       <section className="band border-b border-ink/10">
@@ -68,7 +68,7 @@ export default function AboutPage() {
                 find what you came for.
               </p>
               <p>
-                TopX changes the thing you follow. Subscribe to a subject and
+                MyTopX changes the thing you follow. Subscribe to a subject and
                 the feed is coherent by construction. No model has to infer your
                 intent, because you stated it.
               </p>
@@ -111,7 +111,7 @@ export default function AboutPage() {
               <PhoneFrame
                 screen={{
                   src: "/app/mobile-profile.webp",
-                  alt: "A TopX profile on iPhone showing declared interests as tags above the user's posts",
+                  alt: "A MyTopX profile on iPhone showing declared interests as tags above the user's posts",
                 }}
               />
             </Parallax>

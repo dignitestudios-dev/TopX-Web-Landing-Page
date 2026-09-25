@@ -3,7 +3,7 @@
 @import "shadcn/tailwind.css";
 
 /*
-  TopX design tokens.
+  MyTopX design tokens.
 
   Single-hue system. Everything is the client's brand orange (#F85E00) against
   warm near-black and warm bone white — orange is used as a *field* colour,
@@ -43,7 +43,7 @@
 
 @custom-variant dark (&:is(.dark *));
 
-/* shadcn primitives read these; map them onto the TopX palette so any
+/* shadcn primitives read these; map them onto the MyTopX palette so any
    component pulled from the registry inherits the brand automatically. */
 @theme inline {
   --color-background: var(--background);

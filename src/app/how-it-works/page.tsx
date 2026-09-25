@@ -37,7 +37,7 @@ const steps = [
   {
     title: "Post, submit, or just read",
     body: "Publish to a page you run, send a submission to a page you follow and wait for the owner's approval, or read and never post at all.",
-    detail: "Reading without posting is a first-class way to use TopX, not a lesser one.",
+    detail: "Reading without posting is a first-class way to use MyTopX, not a lesser one.",
   },
 ];
 
@@ -124,7 +124,7 @@ export default function HowItWorksPage() {
               <PhoneFrame
                 screen={{
                   src: "/app/mobile-login.webp",
-                  alt: "The TopX sign-in screen on iPhone",
+                  alt: "The MyTopX sign-in screen on iPhone",
                 }}
               />
             </Parallax>
@@ -132,7 +132,7 @@ export default function HowItWorksPage() {
               <PhoneFrame
                 screen={{
                   src: "/app/mobile-home.webp",
-                  alt: "The TopX home feed on iPhone, showing stories and posts from subscribed topic pages",
+                  alt: "The MyTopX home feed on iPhone, showing stories and posts from subscribed topic pages",
                 }}
               />
             </Parallax>

@@ -5,27 +5,27 @@ import { LegalDocument, type LegalSection } from "@/components/site/legal-docume
 export const metadata: Metadata = {
   title: "Terms of service",
   description:
-    "The rules for using TopX: your account, your content, running a topic page, and how moderation works.",
+    "The rules for using MyTopX: your account, your content, running a topic page, and how moderation works.",
 };
 
 const sections: LegalSection[] = [
   {
     heading: "Accepting these terms",
     paragraphs: [
-      "By creating a TopX account or using the app you agree to these terms. If you do not agree, do not use TopX.",
+      "By creating a MyTopX account or using the app you agree to these terms. If you do not agree, do not use MyTopX.",
     ],
   },
   {
     heading: "Your account",
     paragraphs: [
-      "You must be at least 13 years old to use TopX. You are responsible for activity on your account and for keeping access to it secure.",
-      "Accounts are created through Google or Apple sign-in. If you lose access to that sign-in method you may lose access to your TopX account.",
+      "You must be at least 13 years old to use MyTopX. You are responsible for activity on your account and for keeping access to it secure.",
+      "Accounts are created through Google or Apple sign-in. If you lose access to that sign-in method you may lose access to your MyTopX account.",
     ],
   },
   {
     heading: "Your content",
     paragraphs: [
-      "You keep ownership of everything you post. By posting to TopX you grant us a non-exclusive, worldwide, royalty-free licence to host, store, reproduce and display that content for the purpose of operating the service.",
+      "You keep ownership of everything you post. By posting to MyTopX you grant us a non-exclusive, worldwide, royalty-free licence to host, store, reproduce and display that content for the purpose of operating the service.",
       "You are responsible for what you post. You must have the rights to any content you publish, including content you repost or share from other platforms.",
     ],
   },
@@ -69,20 +69,20 @@ const sections: LegalSection[] = [
   {
     heading: "Advertising",
     paragraphs: [
-      "TopX includes advertising. Advertisers and creators promoting products through the platform must comply with these terms and with applicable advertising law, including disclosing paid promotion where required.",
+      "MyTopX includes advertising. Advertisers and creators promoting products through the platform must comply with these terms and with applicable advertising law, including disclosing paid promotion where required.",
     ],
   },
   {
     heading: "Availability and changes",
     paragraphs: [
-      "We may change, suspend or discontinue parts of TopX. We will give notice of material changes to these terms in the app before they take effect.",
+      "We may change, suspend or discontinue parts of MyTopX. We will give notice of material changes to these terms in the app before they take effect.",
       "The service is provided on an “as is” basis. We do not warrant that it will be uninterrupted or error-free.",
     ],
   },
   {
     heading: "Ending your use",
     paragraphs: [
-      "You can stop using TopX and delete your account at any time. We may suspend or terminate an account that breaches these terms.",
+      "You can stop using MyTopX and delete your account at any time. We may suspend or terminate an account that breaches these terms.",
       "Provisions that by their nature should survive termination — including content licences already granted for content still hosted, and limitations of liability — continue to apply.",
     ],
   },
@@ -99,7 +99,7 @@ export default function TermsPage() {
     <LegalDocument
       title="Terms of service"
       updated="5 August 2026"
-      intro="These terms cover how TopX works, what you can expect from us, and what we expect from you — including the extra responsibilities that come with running a topic page."
+      intro="These terms cover how MyTopX works, what you can expect from us, and what we expect from you — including the extra responsibilities that come with running a topic page."
       sections={sections}
     />
   );

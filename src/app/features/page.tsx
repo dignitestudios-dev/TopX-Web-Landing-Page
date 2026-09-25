@@ -10,7 +10,7 @@ import { LazyTopicOrbit } from "@/components/three/lazy-scenes";
 export const metadata: Metadata = {
   title: "Features",
   description:
-    "Topic pages, subscription pages, submissions, stories, live streams, knowledge posts and messaging — everything TopX gives you to follow a subject properly.",
+    "Topic pages, subscription pages, submissions, stories, live streams, knowledge posts and messaging — everything MyTopX gives you to follow a subject properly.",
 };
 
 const groups = [
@@ -161,7 +161,7 @@ export default function FeaturesPage() {
             <span className="text-blaze">properly</span>.
           </>
         }
-        lede="TopX is built around one unit: the topic page. Everything else — your feed, the conversation, the private side — hangs off it."
+        lede="MyTopX is built around one unit: the topic page. Everything else — your feed, the conversation, the private side — hangs off it."
       />
 
       <section className="border-b border-ink/10 bg-ink text-bone">
@@ -225,7 +225,7 @@ export default function FeaturesPage() {
           <Parallax className="mt-16" distance={40}>
             <LaptopFrame
               src="/app/web-trending.webp"
-              alt="The TopX web app showing trending topic pages and suggestions based on your interests"
+              alt="The MyTopX web app showing trending topic pages and suggestions based on your interests"
             />
           </Parallax>
         </div>

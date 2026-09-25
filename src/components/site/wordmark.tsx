@@ -3,7 +3,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 /**
- * The TopX mark — an X with a spinning top through it — lifted from the app's
+ * The MyTopX mark — an X with a spinning top through it — lifted from the app's
  * own chrome, paired with the name set in the display face.
  */
 export function Wordmark({
@@ -29,7 +29,7 @@ export function Wordmark({
           tone === "ink" ? "text-ink" : "text-bone",
         )}
       >
-        TopX
+        MyTopX
       </span>
     </span>
   );

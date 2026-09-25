@@ -51,7 +51,7 @@ export function LegalDocument({
             {draft && (
               <p className="border-l-2 border-blaze bg-blaze-tint/50 px-6 py-5 text-sm leading-relaxed">
                 <strong className="font-semibold">Draft pending legal review.</strong>{" "}
-                This document describes the intended handling of the TopX product
+                This document describes the intended handling of the MyTopX product
                 as specified. It has not been reviewed by a qualified lawyer and
                 must be before launch or app store submission.
               </p>

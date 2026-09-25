@@ -62,7 +62,7 @@ export default function HomePage() {
         <div className="shell">
           <SplitWords
             as="h2"
-            text="Most feeds sort by who posted. TopX sorts by what it's about."
+            text="Most feeds sort by who posted. MyTopX sorts by what it's about."
             className="block max-w-4xl font-display text-jumbo font-bold text-balance"
           />
 
@@ -81,7 +81,7 @@ export default function HomePage() {
             </Reveal>
 
             <Reveal delay={0.08} className="bg-ink p-8 text-bone sm:p-12">
-              <p className="eyebrow text-blaze">The TopX way</p>
+              <p className="eyebrow text-blaze">The MyTopX way</p>
               <p className="mt-6 font-display text-3xl leading-tight font-bold">
                 You follow a subject, and get only that subject.
               </p>
@@ -122,7 +122,7 @@ export default function HomePage() {
             <Parallax distance={30}>
               <LaptopFrame
                 src="/app/web-home.webp"
-                alt="The TopX web app showing the home feed, with subscriptions on the left and trending pages on the right"
+                alt="The MyTopX web app showing the home feed, with subscriptions on the left and trending pages on the right"
               />
             </Parallax>
           </ScrollScale>

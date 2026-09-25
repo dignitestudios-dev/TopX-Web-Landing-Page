@@ -7,10 +7,10 @@
  */
 
 export const site = {
-  name: "TopX",
+  name: "MyTopX",
   tagline: "Follow topics, not people.",
   description:
-    "TopX is a topic-centric social platform. You subscribe to topics instead of personalities, sort them into your own subscription pages, and decide exactly how much of the conversation you see.",
+    "MyTopX is a topic-centric social platform. You subscribe to topics instead of personalities, sort them into your own subscription pages, and decide exactly how much of the conversation you see.",
   url: "https://topx.app",
 } as const;
 
@@ -26,7 +26,7 @@ export type NavItem = {
 export const connectLink: NavItem = {
   href: "https://referral.my-topx.com/",
   label: "Connect",
-  blurb: "Join the TopX referral programme",
+  blurb: "Join the MyTopX referral programme",
   external: true,
 };
 
@@ -62,13 +62,13 @@ export const footerNav: { heading: string; items: NavItem[] }[] = [
     heading: "Legal",
     items: [
       {
-        href: "https://referral.my-topx.com/PrivacyPolicy",
+        href: "/privacy",
         label: "Privacy policy",
         blurb: "How we handle your data",
         external: true,
       },
       {
-        href: "https://referral.my-topx.com/Terms",
+        href: "/terms",
         label: "Terms of service",
         blurb: "The rules of the platform",
         external: true,

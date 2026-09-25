@@ -14,19 +14,19 @@ type Step = {
 
 const steps: Step[] = [
   {
-    screen: { src: "/app/mobile-home.webp", alt: "The TopX home feed on iPhone" },
+    screen: { src: "/app/mobile-home.webp", alt: "The MyTopX home feed on iPhone" },
     eyebrow: "The feed",
     title: "Only the topics you subscribed to",
     body: "Stories along the top, posts underneath, and every one of them from a topic page you chose by name. Nothing arrives because an algorithm guessed you might tolerate it.",
   },
   {
-    screen: { src: "/app/mobile-profile.webp", alt: "A TopX profile screen on iPhone" },
+    screen: { src: "/app/mobile-profile.webp", alt: "A MyTopX profile screen on iPhone" },
     eyebrow: "Your profile",
     title: "Interests you declared, pages you run",
     body: "Your interests sit on your profile as plain tags. Below them, your posts, the topic pages you own, and the ones you follow — all separated, because they're different things.",
   },
   {
-    screen: { src: "/app/mobile-login.webp", alt: "The TopX sign-in screen on iPhone" },
+    screen: { src: "/app/mobile-login.webp", alt: "The MyTopX sign-in screen on iPhone" },
     eyebrow: "Getting in",
     title: "Google, Apple, or an email address",
     body: "Sign in with an account you already have. No profile-building interview before you're allowed to look at anything.",

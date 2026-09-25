@@ -60,7 +60,7 @@ export function SiteHeader() {
         )}
       >
       <div className="shell flex h-18 items-center justify-between gap-8">
-        <Link href="/" className="group shrink-0" aria-label="TopX home">
+        <Link href="/" className="group shrink-0" aria-label="MyTopX home">
           <Wordmark />
         </Link>
 
